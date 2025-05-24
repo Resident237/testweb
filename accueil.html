@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelForge Studios - Créateurs de Mondes Ludiques</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles personnalisés pour la police Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Styles pour le défilement fluide */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Styles pour les sections avec un fond dégradé */
+        .gradient-bg {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+        }
+        /* Styles pour les cartes de jeu */
+        .game-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        /* Style pour les boutons avec un effet de survol */
+        .btn-primary {
+            background-color: #2575fc;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #6a11cb;
+            transform: translateY(-2px);
+        }
+        /* Style pour le message de succès/erreur du formulaire */
+        #form-message {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #form-message.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <header class="bg-gray-800 shadow-lg fixed w-full z-10 py-4">
+        <nav class="container mx-auto flex justify-between items-center px-4 md:px-6">
+            <a href="#" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300">PixelForge Studios</a>
+            
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#hero" class="text-gray-300 hover:text-white transition-colors duration-300">Accueil</a></li>
+                <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">À Propos</a></li>
+                <li><a href="#games" class="text-gray-300 hover:text-white transition-colors duration-300">Nos Jeux</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
+            </ul>
+
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 py-2">
+            <ul class="flex flex-col items-center space-y-2">
+                <li><a href="#hero" class="block py-2 text-gray-300 hover:text-white transition-colors duration-300">Accueil</a></li>
+                <li><a href="#about" class="block py-2 text-gray-300 hover:text-white transition-colors duration-300">À Propos</a></li>
+                <li><a href="#games" class="block py-2 text-gray-300 hover:text-white transition-colors duration-300">Nos Jeux</a></li>
+                <li><a href="#contact" class="block py-2 text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="gradient-bg text-white py-24 md:py-32 flex items-center min-h-screen">
+        <div class="container mx-auto text-center px-4 md:px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                Donnez Vie à Vos Rêves Ludiques
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                Chez PixelForge Studios, nous forgeons des expériences de jeu inoubliables, alliant innovation, narration captivante et gameplay immersif.
+            </p>
+            <a href="#games" class="btn-primary inline-block px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Découvrez Nos Créations
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="bg-gray-900 py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">À Propos de Nous</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Notre+Equipe" alt="Image de l'équipe de PixelForge Studios" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-gray-300">
+                    <p class="mb-4 text-lg leading-relaxed">
+                        Fondée en 20XX, PixelForge Studios est une équipe passionnée de développeurs, d'artistes et de conteurs dévoués à repousser les limites du divertissement interactif. Notre mission est de créer des jeux qui non seulement divertissent, mais aussi inspirent et connectent les joueurs à travers des mondes riches et des histoires profondes.
+                    </p>
+                    <p class="mb-4 text-lg leading-relaxed">
+                        Nous croyons en l'innovation, la collaboration et la qualité. Chaque projet est une aventure où nous mettons à profit notre expertise technique et notre créativité pour offrir des expériences uniques et mémorables.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Que ce soit pour des jeux d'action, des RPG immersifs ou des puzzles stimulants, nous mettons notre cœur et notre âme dans chaque pixel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="bg-gray-800 py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">Nos Créations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="game-card bg-gray-900 rounded-lg shadow-xl overflow-hidden">
+                    <img src="https://placehold.co/600x350/0F172A/E2E8F0?text=Aventure+Epique" alt="Image du jeu Aventure Épique" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Aventure Épique</h3>
+                        <p class="text-gray-400 text-sm mb-4">Un RPG fantastique en monde ouvert où chaque choix compte.</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-200 font-medium transition-colors duration-300">En savoir plus &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-gray-900 rounded-lg shadow-xl overflow-hidden">
+                    <img src="https://placehold.co/600x350/0F172A/E2E8F0?text=Course+Galactique" alt="Image du jeu Course Galactique" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Course Galactique</h3>
+                        <p class="text-gray-400 text-sm mb-4">Pilotez des vaisseaux spatiaux à travers des nébuleuses lointaines.</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-200 font-medium transition-colors duration-300">En savoir plus &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-gray-900 rounded-lg shadow-xl overflow-hidden">
+                    <img src="https://placehold.co/600x350/0F172A/E2E8F0?text=Mystere+Ancestral" alt="Image du jeu Mystère Ancestral" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Mystère Ancestral</h3>
+                        <p class="text-gray-400 text-sm mb-4">Résolvez des énigmes complexes dans un temple oublié.</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-200 font-medium transition-colors duration-300">En savoir plus &rarr;</a>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="gradient-bg text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contactez-Nous</h2>
+            <div class="max-w-xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl">
+                <p class="text-center mb-6 text-lg">
+                    Vous avez un projet en tête ou une question ? N'hésitez pas à nous contacter !
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="first-name" class="block text-sm font-medium mb-2">Prénom</label>
+                        <input type="text" id="first-name" name="first-name" required
+                               class="w-full p-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="last-name" class="block text-sm font-medium mb-2">Nom de Famille</label>
+                        <input type="text" id="last-name" name="last-name" required
+                               class="w-full p-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="dob" class="block text-sm font-medium mb-2">Date de Naissance</label>
+                        <input type="date" id="dob" name="dob" required
+                               class="w-full p-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="favorite-game" class="block text-sm font-medium mb-2">Votre Jeu Favori</label>
+                        <input type="text" id="favorite-game" name="favorite-game" required
+                               class="w-full p-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="favorite-color" class="block text-sm font-medium mb-2">Votre Couleur Favorite</label>
+                        <input type="color" id="favorite-color" name="favorite-color" value="#2575fc"
+                               class="w-full h-12 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Votre Message (Optionnel)</label>
+                        <textarea id="message" name="message" rows="3"
+                                  class="w-full p-3 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full px-6 py-3 text-lg font-semibold rounded-md shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                        Envoyer les Informations via WhatsApp
+                    </button>
+                    <div id="form-message" class="mt-4 text-center text-sm"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 py-8 text-center text-gray-400">
+        <div class="container mx-auto px-4 md:px-6">
+            <p>&copy; <span id="current-year"></span> PixelForge Studios. Tous droits réservés.</p>
+            <p class="mt-2">Développé avec passion pour les jeux vidéo.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fonctionnalité pour le menu mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('nav ul li a, #mobile-menu ul li a');
+
+            // Bascule l'affichage du menu mobile au clic du bouton
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Ferme le menu mobile et défilement fluide au clic d'un lien de navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Empêche le comportement de lien par défaut
+
+                    // Ferme le menu mobile si ouvert
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+
+                    const targetId = link.getAttribute('href'); // Récupère l'ID de la section cible
+                    const targetSection = document.querySelector(targetId); // Sélectionne la section cible
+
+                    if (targetSection) {
+                        // Défilement fluide vers la section cible
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Ajuste pour la hauteur de l'en-tête fixe
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Mise à jour de l'année courante dans le pied de page
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Gestion de la soumission du formulaire de contact
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Empêche le rechargement de la page par défaut
+
+                    // Récupération des données du formulaire
+                    const firstName = document.getElementById('first-name').value;
+                    const lastName = document.getElementById('last-name').value;
+                    const dob = document.getElementById('dob').value;
+                    const favoriteGame = document.getElementById('favorite-game').value;
+                    const favoriteColor = document.getElementById('favorite-color').value;
+                    const message = document.getElementById('message').value; // Le message est maintenant optionnel
+
+                    // Formatage de la date de naissance pour une meilleure lisibilité
+                    const dobDate = new Date(dob);
+                    const formattedDob = dobDate.toLocaleDateString('fr-FR');
+
+                    // Construction du message pour WhatsApp
+                    let whatsappMessage = `Bonjour ! Je m'appelle ${firstName} ${lastName}, né(e) le ${formattedDob}. Mon jeu préféré est "${favoriteGame}" et ma couleur favorite est ${favoriteColor}.`;
+                    if (message) {
+                        whatsappMessage += ` Mon message : ${message}`;
+                    }
+
+                    // Numéro WhatsApp de destination (à remplacer par le vrai numéro)
+                    const whatsappNumber = '2376XXXXXXXX'; // REMPLACEZ PAR LE VRAI NUMÉRO DE TÉLÉPHONE
+
+                    // Encodage du message pour l'URL
+                    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+                    // Création de l'URL WhatsApp
+                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                    // Affichage d'un message à l'utilisateur
+                    formMessage.textContent = 'Génération du lien WhatsApp...';
+                    formMessage.className = 'mt-4 text-center text-sm text-blue-400 show';
+
+                    // Ouvre le lien WhatsApp dans une nouvelle fenêtre/onglet
+                    // NOTE : Pour que cela fonctionne sur mobile, l'application WhatsApp doit être installée.
+                    // Sur desktop, cela ouvrira WhatsApp Web si configuré.
+                    window.open(whatsappURL, '_blank');
+
+                    // Affichage d'un message de confirmation après l'ouverture du lien
+                    formMessage.textContent = 'Lien WhatsApp généré ! Vérifiez votre application WhatsApp.';
+                    formMessage.className = 'mt-4 text-center text-sm text-green-400 show';
+
+                    // Cache le message après un certain temps
+                    setTimeout(() => {
+                        formMessage.classList.remove('show');
+                        formMessage.textContent = '';
+                    }, 5000);
+
+                    // Le formulaire n'est pas réinitialisé automatiquement pour permettre à l'utilisateur de voir les informations.
+                    // Si vous souhaitez réinitialiser le formulaire après l'envoi, décommentez la ligne ci-dessous :
+                    // contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
